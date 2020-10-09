@@ -1,16 +1,6 @@
-/**
- *
- */
 
-/**
- * @author yuki0
- *
- */
 public class StringLenge {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		int i;
 		int[] intarray = new int[10];
