@@ -11,38 +11,39 @@ public class KionStat2 {
 		for(int i = 0;i < kion.length;i++) {
 			System.out.println(kion[i]);
 		}
-		System.out.println("平均" + ave(kion));
-		System.out.println("最高気温" + max(kion));
-		System.out.println("最低気温" + min(kion));
+
+		System.out.println("平均" + ave());
+		System.out.println("最高気温" + max());
+		System.out.println("最低気温" + min());
 
 	}
 
-	public static double ave(double array[]) {//平均気温を求める
+	public static double ave() {//平均気温を求める
 		double sum = 0;
 
-		for(int i=0;i < array.length;i++) {
-			sum += array[i];
+		for(int i=0;i < kion.length;i++) {
+			sum += kion[i];
 		}
-		return sum/array.length;
+		return sum/kion.length;
 	}
 
-	public static double max(double array[]) {//最高気温を求める
-		double maxk = array[0];//配列の０番目を初期値にする
+	public static double max() {//最高気温を求める
+		double maxk = kion[0];//配列の０番目を初期値にする
 
-		for(int i = 1;i < array.length;i++) {
-			if(maxk < array[i]) {
-				maxk = array[i];
+		for(int i = 1;i < kion.length;i++) {
+			if(maxk < kion[i]) {
+				maxk = kion[i];
 			}
 		}
 		return maxk;
 	}
 
-	public static double min(double array[]) {//最低気温を求める
-		double mink = array[0];//配列の０番目を初期値にする
+	public static double min() {//最低気温を求める
+		double mink = kion[0];//配列の０番目を初期値にする
 
-		for(int i = 1;i < array.length;i++) {
-			if(mink > array[i]) {
-				mink = array[i];
+		for(int i = 1;i < kion.length;i++) {
+			if(mink > kion[i]) {
+				mink = kion[i];
 			}
 		}
 		return mink;
