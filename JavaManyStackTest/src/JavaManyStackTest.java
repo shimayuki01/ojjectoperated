@@ -4,7 +4,7 @@ public class JavaManyStackTest {
 	public static void main(String[] args) {
 		//複数のインスタンス・オブジェクトを生成
 		JavaManyStack stk = new JavaManyStack();
-		JavaManyStack abc = new JavaManyStack();
+		JavaManyStack abc = new JavaManyStack(10);
 
 		stk.push(9);
 		stk.push(10);
@@ -17,6 +17,7 @@ public class JavaManyStackTest {
 		System.out.println("abc "+ abc.pop());
 		System.out.println("abc "+ abc.pop());
 
+		System.out.println(stk);
 
 	}
 
@@ -26,9 +27,12 @@ class JavaManyStack{
 	  int storage[];
 
 	public JavaManyStack() {
+		this(5);
+	}
+	public JavaManyStack(int n) {
 		System.out.println("コンストラクタ実行");//コンストラクタ実行確認
-		index = 0 ;
-		storage = new int[10] ;
+		this.index = 0 ;
+		this.storage = new int[n] ;
 	}
 	public void push(int n) {
 		//storageがいっぱいだったら終了
@@ -48,5 +52,10 @@ class JavaManyStack{
 		}
 		return storage[--index];
 	}
+
+	//自己出力表現（スタックの数を表示するように上書き）
+	public String toString() {
+		return "JavaManyStack{index=" + index + "}";
+		}
 
 }
