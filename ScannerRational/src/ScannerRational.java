@@ -1,9 +1,7 @@
 import java.util.Scanner;
 
 public class ScannerRational {
-	/**
-	 * @param args
-	 */
+
 	public static void main(String args[]) {
 		Rational x,y;
 
@@ -103,7 +101,9 @@ class Rational {
 		if (r.den <= 0) {
 			if (r.den == 0) {//分母が0の時終了する
 				System.out.println("分母が0です");
-				System.exit(1);
+				r.mol = 0;
+				r.den = 1;
+				return r;
 			}
 			//分母が負の時分母と分子の正負を入れ替える
 			r.den *= -1;
