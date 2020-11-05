@@ -38,9 +38,7 @@ public class ScannerRational {
 					y = new Rational(0);
 
 				}
-				System.out.println("X = " + x);
-				System.out.println("y = " + y);
-				System.out.println(":"+rat[0] + ":");
+
 
 				//演算子の判定
 				//足し算
