@@ -53,11 +53,11 @@ public class ScannerRational {
 				}
 				//掛け算
 				if (rat[0].equals("*")) {
-					System.out.println(rat[1] + " + " + rat[1] + " = " + Rational.mul(x, y));
+					System.out.println(rat[1] + " * " + rat[1] + " = " + Rational.mul(x, y));
 				}
 				//割り算
 				if (rat[0].equals("/")) {
-					System.out.println(rat[1] + " + " + rat[2] + " = " + Rational.div(x, y));
+					System.out.println(rat[1] + " / " + rat[2] + " = " + Rational.div(x, y));
 				}
 			} else {
 				System.out.println("INPUT: " + input);
