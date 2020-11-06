@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ScannerRational {
 
 	public static void main(String args[]) {
-		Rational x,y;
+		Rational x, y;
 
 		Scanner scanner = new Scanner(System.in); // 標準入力からの読み込み
 
@@ -15,32 +15,39 @@ public class ScannerRational {
 			if (rat.length == 3) { // ２つの値
 				String num1[] = rat[1].split("/");
 				String num2[] = rat[2].split("/");
+				try {
+					if (num1.length == 1) { // 整数
+						x = new Rational(Integer.parseInt(num1[0]));
+					} else if (num1.length == 2) { // 分数
+						x = new Rational(Integer.parseInt(num1[0]), Integer.parseInt(num1[1]));
+					} else {
+						System.out.println("x:有理数に変換できません");
+						continue;
+					}
+//				} catch (NumberFormatException e) {
+//					System.out.println("数値の形式が正しくありません: x = " + rat[1]);
+//					continue;
+//				}
 
-				if (num1.length == 1) { // 整数
-					x = new Rational(Integer.parseInt(num1[0]));
-				} else if (num1.length == 2) { // 分数
-					x = new Rational(Integer.parseInt(num1[0]), Integer.parseInt(num1[1]));
-				}else {
-					System.out.println("x:有理数に変換できません");
-					x = new Rational(0);
-									}
+				//y {
+					if (num2.length == 1) { // 整数
+						y = new Rational(Integer.parseInt(num2[0]));
 
-				if (num2.length == 1) { // 整数
-					y = new Rational(Integer.parseInt(num2[0]));
+					} else if (num2.length == 2) { // 分数
+						y = new Rational(Integer.parseInt(num2[0]), Integer.parseInt(num2[1]));
 
-				} else if (num2.length == 2) { // 分数
-					y = new Rational(Integer.parseInt(num2[0]), Integer.parseInt(num2[1]));
-
-				}else {
-					System.out.println("y:有理数に変換できません");
-					y = new Rational(0);
-
+					} else {
+						System.out.println("y:有理数に変換できません");
+						continue;
+					}
+				} catch (NumberFormatException e) {
+					System.out.println("数値の形式が正しくありません:  ");
+					continue;
 				}
-
 
 				//演算子の判定
 				//足し算
-				if (rat[0].equals("+")){
+				if (rat[0].equals("+")) {
 					System.out.println(rat[1] + " + " + rat[2] + " = " + Rational.add(x, y));
 				}
 				//引き算
@@ -56,6 +63,7 @@ public class ScannerRational {
 					System.out.println(rat[1] + " / " + rat[2] + " = " + Rational.div(x, y));
 				}
 			} else {
+				System.out.print("引数の数が正しくありません");
 				System.out.println("INPUT: " + input);
 			}
 		}
