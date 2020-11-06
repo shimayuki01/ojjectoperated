@@ -1,9 +1,17 @@
 import java.util.Scanner;
 
 public class ScannerRational {
+<<<<<<< HEAD
 
 	public static void main(String args[]) {
 		Rational x, y;
+=======
+	/**
+	 * @param args
+	 */
+	public static void main(String args[]) {
+		Rational x,y;
+>>>>>>> change
 
 		Scanner scanner = new Scanner(System.in); // 標準入力からの読み込み
 
@@ -15,6 +23,7 @@ public class ScannerRational {
 			if (rat.length == 3) { // ２つの値
 				String num1[] = rat[1].split("/");
 				String num2[] = rat[2].split("/");
+<<<<<<< HEAD
 				try {
 					if (num1.length == 1) { // 整数
 						x = new Rational(Integer.parseInt(num1[0]));
@@ -43,11 +52,37 @@ public class ScannerRational {
 				} catch (NumberFormatException e) {
 					System.out.println("数値の形式が正しくありません:  ");
 					continue;
+=======
+
+				if (num1.length == 1) { // 整数
+					x = new Rational(Integer.parseInt(num1[0]));
+				} else if (num1.length == 2) { // 分数
+					x = new Rational(Integer.parseInt(num1[0]), Integer.parseInt(num1[1]));
+				}else {
+					System.out.println("x:有理数に変換できません");
+					x = new Rational(0);
+									}
+
+				if (num2.length == 1) { // 整数
+					y = new Rational(Integer.parseInt(num2[0]));
+
+				} else if (num2.length == 2) { // 分数
+					y = new Rational(Integer.parseInt(num2[0]), Integer.parseInt(num2[1]));
+
+				}else {
+					System.out.println("y:有理数に変換できません");
+					y = new Rational(0);
+
+>>>>>>> change
 				}
 
 				//演算子の判定
 				//足し算
+<<<<<<< HEAD
 				if (rat[0].equals("+")) {
+=======
+				if (rat[0].equals("+")){
+>>>>>>> change
 					System.out.println(rat[1] + " + " + rat[2] + " = " + Rational.add(x, y));
 				}
 				//引き算
@@ -56,6 +91,7 @@ public class ScannerRational {
 				}
 				//掛け算
 				if (rat[0].equals("*")) {
+<<<<<<< HEAD
 					System.out.println(rat[1] + " * " + rat[1] + " = " + Rational.mul(x, y));
 				}
 				//割り算
@@ -64,6 +100,15 @@ public class ScannerRational {
 				}
 			} else {
 				System.out.print("引数の数が正しくありません");
+=======
+					System.out.println(rat[1] + " + " + rat[1] + " = " + Rational.mul(x, y));
+				}
+				//割り算
+				if (rat[0].equals("/")) {
+					System.out.println(rat[1] + " + " + rat[2] + " = " + Rational.div(x, y));
+				}
+			} else {
+>>>>>>> change
 				System.out.println("INPUT: " + input);
 			}
 		}
@@ -109,9 +154,13 @@ class Rational {
 		if (r.den <= 0) {
 			if (r.den == 0) {//分母が0の時終了する
 				System.out.println("分母が0です");
+<<<<<<< HEAD
 				r.mol = 0;
 				r.den = 1;
 				return r;
+=======
+				System.exit(1);
+>>>>>>> change
 			}
 			//分母が負の時分母と分子の正負を入れ替える
 			r.den *= -1;
