@@ -1,18 +1,7 @@
 import java.util.Scanner;
 
-/**
- *
- */
-
-/**
- * @author yuki0
- *
- */
 public class ScannerLine {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
@@ -26,12 +15,8 @@ public class ScannerLine {
 				System.out.println("tolem  " + token[i]);
 			}
 		}
-
 		scanner.close();
 	}
+}
 
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> change
+
