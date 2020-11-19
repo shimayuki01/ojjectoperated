@@ -3,7 +3,7 @@ public class YUBINstrage {
 	String Yinfo[] = new String[5];
 
 	public YUBINstrage(String a[]) {
-		for(int i = 0;i < 5;i++) {
+		for(int i = 0;i < a.length;i++) {
 			Yinfo[i] = a[i];
 		}
 	}
@@ -13,7 +13,7 @@ public class YUBINstrage {
 		}
 
 	public void print() {
-		for(int i=0;i < 5;i++) {
+		for(int i=0;i < Yinfo.length;i++) {
 			System.out.print(Yinfo[i]+" ");
 		}
 		System.out.println();
