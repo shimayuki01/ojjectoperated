@@ -19,26 +19,24 @@ public class ZipSearchEndless {
 			while (sterm.hasNext()) {
 				String zip = sterm.next(); // 検索番号の取得
 				int a = 0;
-				if(zip.length() > 7) {   //７文字以上が入力されたら郵便番号ではないので検索外となる
+				if (zip.length() > 7) { //７文字以上の郵便番号は存在しないので検索外となる
 					System.out.println("7文字以下の数字を入力してください");
 					continue;
 				}
-				for (int i = 0; i < index -1; i++) {
+				for (int i = 0; i < index; i++) {
 					if (zip.equals(ystrage[i].Ynumber().substring(0, zip.length()))) { // 郵便番号の比較
-						ystrage[i].print();
-						a = 1;            //発見できたらa=1にして発見状態とする
+						System.out.println(ystrage);
+						a = 1; //発見できたらa=1にして発見状態とする
 					}
 				}
 				//a=0だったら見つかっていない
-				if(a == 0) {
+				if (a == 0) {
 					System.out.println("見つかりませんでした");
 				}
 			}
 			sterm.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: ファイルが見つかりません" + e.getMessage());
-		}catch(NumberFormatException e) {
-			System.out.println("数字以外が入力されました");
 		} finally {
 			if (sfile != null) { // scannerのインスタンスが代入されていることを確認
 				sfile.close();
@@ -46,5 +44,3 @@ public class ZipSearchEndless {
 		}
 	}
 }
-
-
